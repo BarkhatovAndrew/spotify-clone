@@ -10,6 +10,6 @@ export const Box = (props: BoxProps) => {
   const { children, className } = props
 
   return (
-    <div className={twMerge('bg-neutral-900 rounded-lg h-fit w-full', className)}>{children}</div>
+    <div className={twMerge('h-fit w-full rounded-lg bg-neutral-900', className)}>{children}</div>
   )
 }

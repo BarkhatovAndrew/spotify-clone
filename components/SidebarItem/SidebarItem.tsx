@@ -17,7 +17,7 @@ export const SidebarItem = (props: SidebarItemProps) => {
     <Link
       href={href}
       className={twMerge(
-        'flex h-auto items-center gap-x-4 text-md font-medium hover:text-white text-neutral-400 transition py-1',
+        'text-md flex h-auto items-center gap-x-4 py-1 font-medium text-neutral-400 transition hover:text-white',
         active && 'text-white',
         className,
       )}
