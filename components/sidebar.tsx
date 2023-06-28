@@ -4,8 +4,8 @@ import { ReactNode, useMemo } from 'react'
 import { usePathname } from 'next/navigation'
 import { HiHome } from 'react-icons/hi'
 import { BiSearch } from 'react-icons/bi'
-import { Box } from '@/components/Box'
-import { SidebarItem } from '@/components/SidebarItem'
+import { Box } from '@/components/box'
+import { SidebarItem } from '@/components/sidebar-item'
 import { Library } from '@/components/Library'
 
 interface SidebarProps {

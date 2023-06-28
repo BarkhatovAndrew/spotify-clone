@@ -45,7 +45,7 @@ export const AuthModal = (props: AuthModalProps) => {
         supabaseClient={supabaseClient}
         theme="dark"
         magicLink
-        providers={['github', 'google', 'linkedin']}
+        providers={['github', 'google']}
         appearance={{
           theme: ThemeSupa,
           variables: {

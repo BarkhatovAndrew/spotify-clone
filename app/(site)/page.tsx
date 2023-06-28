@@ -1,5 +1,5 @@
-import { Header } from '@/components/Header'
-import { ListItem } from '@/components/ListItem'
+import { Header } from '@/components/header'
+import { ListItem } from '@/components/list-item'
 
 export default function Home() {
   return (
