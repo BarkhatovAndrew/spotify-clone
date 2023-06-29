@@ -15,11 +15,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) =>
       disabled={disabled}
       ref={ref}
       className={twMerge(
-        'w-full rounded-full bg-green-500 border border-transparent px-3 py-3 disabled:cursor-not-allowed disabled:opacity-50 text-black font-bold hover:opacity-75 transition',
+        `w-full rounded-full border border-transparent bg-green-500 px-3 py-3 font-bold
+        text-black transition hover:opacity-75 disabled:cursor-not-allowed disabled:opacity-50`,
         className,
       )}
-      {...restProps}
-    >
+      {...restProps}>
       {children}
     </button>
   )
