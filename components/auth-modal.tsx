@@ -17,29 +17,26 @@ export const AuthModal = (props: AuthModalProps) => {
   const supabaseClient = useSupabaseClient()
   const router = useRouter()
   const session = useSessionContext()
-  const { isOpen, onClose } = useAuthModal()
+  const authModal = useAuthModal()
 
-  const onChange = useCallback(
-    (open: boolean) => {
-      if (isOpen) {
-        onClose()
-      }
-    },
-    [isOpen, onClose],
-  )
+  const onChange = useCallback(() => {
+    if (authModal.isOpen) {
+      authModal.onClose()
+    }
+  }, [authModal])
 
   useEffect(() => {
     if (session) {
       router.refresh()
-      onClose()
+      authModal.onClose()
     }
-  }, [onClose, router, session])
+  }, [authModal.onClose, router, session])
 
   return (
     <Modal
       title="Welcome back"
       description="Login to your account"
-      isOpen={isOpen}
+      isOpen={authModal.isOpen}
       onChange={onChange}>
       <Auth
         supabaseClient={supabaseClient}

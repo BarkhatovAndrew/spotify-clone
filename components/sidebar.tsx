@@ -6,7 +6,7 @@ import { HiHome } from 'react-icons/hi'
 import { BiSearch } from 'react-icons/bi'
 import { Box } from '@/components/box'
 import { SidebarItem } from '@/components/sidebar-item'
-import { Library } from '@/components/Library'
+import { Library } from '@/components/library'
 
 interface SidebarProps {
   children: ReactNode
