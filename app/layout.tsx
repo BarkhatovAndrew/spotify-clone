@@ -5,6 +5,7 @@ import { SupabaseProvider } from '@/providers/supabase-provider'
 import { UserProvider } from '@/providers/user-provider'
 import { ModalProvider } from '@/providers/modal-provider'
 import { ToasterProvider } from '@/providers/toaster-provider'
+import { getSongsByUserId } from '@/actions/get-songs-by-user-id'
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -13,7 +14,11 @@ export const metadata = {
   description: 'Listen to music',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const revalidate = 0
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const userSongs = await getSongsByUserId()
+
   return (
     <html lang="en">
       <body className={font.className}>
@@ -21,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>{children}</Sidebar>
+            <Sidebar songs={userSongs}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>
