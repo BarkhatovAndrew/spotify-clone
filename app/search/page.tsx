@@ -9,6 +9,8 @@ interface SearchProps {
   }
 }
 
+export const revalidate = 0
+
 export default async function Search(props: SearchProps) {
   const { searchParams } = props
 

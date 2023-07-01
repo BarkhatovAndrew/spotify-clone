@@ -2,6 +2,7 @@
 
 import { Song } from '@/types'
 import { MediaItem } from '@/components/media-item'
+import { LikeButton } from '@/components/like-button'
 
 interface SearchContentProps {
   className?: string
@@ -22,6 +23,7 @@ export const SearchContent = (props: SearchContentProps) => {
           <div className="flex-1">
             <MediaItem song={song} onClick={() => {}} />
           </div>
+          <LikeButton songId={song.id} />
         </div>
       ))}
     </div>
