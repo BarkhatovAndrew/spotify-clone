@@ -16,10 +16,15 @@ export const ListItem = (props: ListItemProps) => {
 
   const router = useRouter()
 
+  const handleClick = () => {
+    router.push('/' + href)
+  }
+
   return (
     <button
       className="group relative flex cursor-pointer items-center gap-x-4 overflow-hidden rounded-md
-    bg-neutral-100/10 pr-4 transition hover:bg-neutral-100/20">
+    bg-neutral-100/10 pr-4 transition hover:bg-neutral-100/20"
+      onClick={handleClick}>
       <div className="relative min-h-[64px] min-w-[64px]">
         <Image className="object-cover" src={image} fill alt="Image" />
       </div>

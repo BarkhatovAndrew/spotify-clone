@@ -2,6 +2,7 @@ import { Header } from '@/components/header'
 import { ListItem } from '@/components/list-item'
 import { getSongs } from '@/actions/get-songs'
 import { PageContent } from '@/app/(site)/components/page-content'
+import { useRouter } from 'next/navigation'
 
 export const revalidate = 0
 

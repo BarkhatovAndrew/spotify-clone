@@ -16,6 +16,7 @@ export const LikeButton = (props: LikeButtonProps) => {
   const { songId } = props
   const { supabaseClient } = useSessionContext()
   const { user } = useUser()
+  const router = useRouter()
   const authModal = useAuthModal()
   const [isLiked, setIsLiked] = useState(false)
 
@@ -51,6 +52,8 @@ export const LikeButton = (props: LikeButtonProps) => {
         setIsLiked(true)
       }
     }
+
+    router.refresh()
   }
 
   useEffect(() => {
